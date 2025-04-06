@@ -20,6 +20,10 @@ const urlSchema = new mongoose.Schema({
 
 const Url = mongoose.model("Url", urlSchema);
 
+app.get("/", (req, res) => {
+  res.send("Server is running!");
+});
+
 // API to shorten URL
 app.post("/api/shorten", async (req, res) => {
   const { originalUrl } = req.body;
